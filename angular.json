@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "AssemblyLineManagementSys"
+    }
+  },
+  "defaultProject": "AssemblyLineManagementSys",
+  "cli": {
+    "analytics": false
+  }
 }
