@@ -1,1 +1,12 @@
 <p>settings-assembly-line works!</p>
+<span>
+        <div class="border border-info fitToContent rounded">
+            <ul style="list-style-type:none;">
+                <li><div><button>start</button></div></li>
+                <li><div><div><p>04:00</p></div></div></li>
+                <li *ngFor="let machine of MachineArr"><button>{{machine}}</button></li>
+                <li><div><p>{{ProductCount}}</p></div></li>
+                <li><div><p>Assembly Line no {{AssemblyLineName}}</p></div></li>
+            </ul>
+        </div>
+</span>

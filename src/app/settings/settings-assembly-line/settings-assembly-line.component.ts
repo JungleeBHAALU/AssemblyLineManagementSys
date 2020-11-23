@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsAssemblyLineComponent implements OnInit {
 
+  MachineArr:string[]=["machine1","machine2","machine3"];
+  AssemblyLineName:string='1';
+  ProductCount:number=99;
   constructor() { }
 
   ngOnInit(): void {
