@@ -1,14 +1,15 @@
     <div class="container-fluid">
       <div class="row-fluid">
         <div class="span12">
-          <button type="button" class="btn btn-outline-info">Create New Assembly Line</button>
+          <button type="button" class="btn btn-outline-info" [routerLink]="['/SettingsEditAssemblyLine']" routerLinkActive="router-link-active"  (click)="createNewAssembly()">Create New Assembly Line</button>
         </div>
       </div>
       <div class="row-fluid">
         <div class="span12">
-          <div *ngFor="let line of AssemblyLineObjArray" class="float-left">
+          <!-- <div *ngFor="let line of AssemblyLineObjArray" class="float-left">
           <app-settings-assembly-line [AssemblyLineObj]="line"></app-settings-assembly-line>
-          </div>
+          </div> -->
+          <router-outlet></router-outlet>
         </div>
       </div>
     </div>

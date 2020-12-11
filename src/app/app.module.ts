@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SettingsLayoutComponent } from './settings/settings-layout/settings-layout.component';
 import { SettingsAssemblyLineComponent } from './settings/settings-assembly-line/settings-assembly-line.component';

@@ -14,7 +14,6 @@ export class SettingsLayoutComponent implements OnInit {
     {MachineName:"machine7",Active:"yes"},{MachineName:"machine8",Active:"yes"},{MachineName:"machine9",Active:"no"},
     {MachineName:"machine10",Active:"no"},{MachineName:"machine11",Active:"no"},{MachineName:"machine12",Active:"no"},
     {MachineName:"machine13",Active:"no"},{MachineName:"machine14",Active:"no"},{MachineName:"machine15",Active:"no"}
-    
   ];
 
   //AssemblyLineArray contains obj of 
@@ -33,8 +32,10 @@ export class SettingsLayoutComponent implements OnInit {
     }
   ];
   constructor() { }
-
+  createNewAssembly(){
+    
+  }
   ngOnInit(): void {
   }
-
+  
 }
