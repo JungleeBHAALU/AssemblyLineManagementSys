@@ -1,4 +1,7 @@
+import { AssemblyLineService } from './../../services/assembly-line.service';
+import { AssemblyLine} from 'src/app/models/assemblyLine-model'
 import { Component, OnInit } from '@angular/core';
+import {  Input } from '@angular/core'
 
 @Component({
   selector: 'app-settings-assembly-line',
@@ -7,12 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsAssemblyLineComponent implements OnInit {
 
-  MachineArr:string[]=["machine1","machine2","machine3"];
-  AssemblyLineName:string='1';
-  ProductCount:number=99;
+  @Input() AssemblyLineObj:AssemblyLine;
+
+  MachineArr:string[];
+  AssemblyLineName:string;
+  ProductCount:number;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.MachineArr=this.AssemblyLineObj.MachineArr;
+    this.AssemblyLineName=this.AssemblyLineObj.AssemblyLineName;
+    this.ProductCount=this.AssemblyLineObj.ProductCount;
+    
   }
 
 }
