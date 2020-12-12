@@ -10,7 +10,7 @@ export class SettingsServiceService {
 
   MachineArray:Array<machineModel>=[];
   AssemblyLineObjArray:Array<AssemblyLine>=[];
-
+  AssemblyLineObj:AssemblyLine;
 
   constructor() { }
 
@@ -28,5 +28,13 @@ export class SettingsServiceService {
   }
   retrieveAssemblyLineObjArray(){
    return this.AssemblyLineObjArray;
+  }
+
+  //for AssemclyLineObj getter setter
+  saveAssemblyLineObj(line){
+    this.AssemblyLineObj=line;
+  }
+  retrieveAssemblyLineObj(){
+   return this.AssemblyLineObj;
   }
 }

@@ -45,12 +45,29 @@ export class SettingsComponent implements OnInit {
 }
   createNewAssemblyLine(MachineArray){
     // this.router.navigate(['/SettingsEditAssemblyLine',MachineArray]);
-    this.router.navigate(['/SettingsEditAssemblyLine'], {queryParams: {MachineArray: this.MachineArray,AssemblyLineObj:{
+    // this.router.navigate(['/SettingsEditAssemblyLine'], {queryParams: {MachineArray: this.MachineArray,AssemblyLineObj:{
+    //   MachineArr:[],
+    //   AssemblyLineName:'',
+    //   ProductCount:0,
+    //   Timer:240
+    // } }});
+    console.log("yo");
+    this.router.navigate(['/SettingsEditAssemblyLine']);
+    this.settingsService.saveMachineArray(this.MachineArray);
+    this.settingsService.saveAssemblyLineObj({
       MachineArr:[],
-      AssemblyLineName:'',
+      AssemblyLineName:0,
       ProductCount:0,
       Timer:240
-    } }});
+    });
+  }
+
+  editAssemblyLine(line:AssemblyLine){
+    // this.router.navigate(['/SettingsEditAssemblyLine',MachineArray]);
+    this.router.navigate(['/SettingsEditAssemblyLine']);
+    this.settingsService.saveMachineArray(this.MachineArray);
+    this.settingsService.saveAssemblyLineObj(line);
+   //this.settingsService.saveAssemblyLineObjArray(this.AssemblyLineObjArray);
   }
 
 }

@@ -2,7 +2,9 @@
   <p>layout</p>       
 <div *ngFor="let line of AssemblyLineObjArray" class="float-left">
     <app-settings-assembly-line [AssemblyLineObj]="line"></app-settings-assembly-line>
-</div> 
+    <button (click)="editAssemblyLine(line)">edit</button>
+</div>
+ 
 <!-- <div *ngFor="let line of MachineArray" class="float-left">
     <p>{{line.MachineName}}</p>
 </div> -->

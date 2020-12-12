@@ -1,9 +1,11 @@
+import { SettingsComponent } from './../settings.component';
 import { SettingsServiceService } from './../../services/settings-service.service';
 import { AssemblyLine } from './../../models/assemblyLine-model';
 import { Component, OnInit, Input } from '@angular/core';
 import {machineModel} from 'src/app/models/machine-model'
 import {Router} from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+
 
 
 @Component({
@@ -17,7 +19,7 @@ export class SettingsLayoutComponent implements OnInit {
 
   //AssemblyLineArray contains obj of 
   AssemblyLineObjArray:AssemblyLine[];
-  constructor(private router:ActivatedRoute,private settingsService:SettingsServiceService) { }
+  constructor(private router:ActivatedRoute,private settingsService:SettingsServiceService,private settingsComponent:SettingsComponent) { }
   
   ngOnInit(): void {
     //debugger;
@@ -31,6 +33,10 @@ export class SettingsLayoutComponent implements OnInit {
      console.log(this.MachineArray);
      this.AssemblyLineObjArray=this.settingsService.retrieveAssemblyLineObjArray();
      console.log(this.AssemblyLineObjArray);
+  }
+  
+  editAssemblyLine(line:AssemblyLine){
+    this.settingsComponent.editAssemblyLine(line);
   }
   
 }
