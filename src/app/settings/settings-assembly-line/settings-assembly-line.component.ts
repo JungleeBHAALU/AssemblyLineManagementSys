@@ -1,7 +1,9 @@
+import { machineModel } from './../../models/machine-model';
 import { AssemblyLineService } from './../../services/assembly-line.service';
 import { AssemblyLine} from 'src/app/models/assemblyLine-model'
 import { Component, OnInit } from '@angular/core';
 import {  Input } from '@angular/core'
+
 
 @Component({
   selector: 'app-settings-assembly-line',
@@ -13,7 +15,7 @@ export class SettingsAssemblyLineComponent implements OnInit {
   @Input() AssemblyLineObj:AssemblyLine;
 
   MachineArr:string[];
-  AssemblyLineName:string;
+  AssemblyLineName:number;
   ProductCount:number;
 
   constructor() { }

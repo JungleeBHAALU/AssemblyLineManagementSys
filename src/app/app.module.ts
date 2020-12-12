@@ -9,6 +9,7 @@ import { SettingsEditAssemblyLineComponent } from './settings/settings-edit-asse
 import { MainAppLayoutPageComponent } from './main-app-layout-page/main-app-layout-page.component';
 import { TopNavbarComponent } from './main-app-layout-page/top-navbar/top-navbar.component';
 import {AssemblyLineService} from 'src/app/services/assembly-line.service';
+import { SettingsComponent } from './settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {AssemblyLineService} from 'src/app/services/assembly-line.service';
     SettingsAssemblyLineComponent,
     SettingsEditAssemblyLineComponent,
     MainAppLayoutPageComponent,
-    TopNavbarComponent
+    TopNavbarComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { SettingsLayoutComponent } from './settings/settings-layout/settings-lay
 
 const routes: Routes = [
   {path:'SettingsEditAssemblyLine',component:SettingsEditAssemblyLineComponent},
-  {path:'SettingsAssemblyLine',component:SettingsAssemblyLineComponent}
+  {path:'SettingsAssemblyLine',component:SettingsAssemblyLineComponent},
   {path:'SettingsLayout',component:SettingsLayoutComponent}
   
 ];

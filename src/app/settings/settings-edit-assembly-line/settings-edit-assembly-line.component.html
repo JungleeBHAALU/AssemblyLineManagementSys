@@ -1,1 +1,18 @@
-<p>settings-edit-assembly-line works!</p>
+<p>edit</p>
+<div>
+    <span>
+        <div class="border border-info fitToContent rounded">
+            <ul style="list-style-type:none;">
+                <li><div><button>start</button></div></li>
+                <li><div><div><p>04:00</p></div></div></li>
+                <li *ngFor="let machine of machineArrOfobj"><button>{{machine}}</button></li>
+                <li><div><p>Assembly Line no {{AssemblyLineName}}</p></div></li>
+                
+            </ul>
+            
+        </div>
+    </span>
+    <div>
+        <div><button>Add Machine</button></div>
+    </div>
+</div>
