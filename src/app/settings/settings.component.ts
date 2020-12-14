@@ -3,6 +3,8 @@ import { machineModel } from './../models/machine-model';
 import { AssemblyLine } from './../models/assemblyLine-model';
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import * as jquery from 'jquery';
+
 
 
 
@@ -38,6 +40,8 @@ export class SettingsComponent implements OnInit {
   constructor(private router:Router,private settingsService:SettingsServiceService) { }
 
   ngOnInit(): void {
+   // jquery('.js-example-basic-single').select2(); //initialize select2 to particular input
+
   //  this.router.navigate(['/SettingsLayout'],{queryParams: {MachineArray: this.MachineArray,AssemblyLineObjArray:this.AssemblyLineObjArray }});
   this.router.navigate(['/SettingsLayout']);
   this.settingsService.saveMachineArray(this.MachineArray);
@@ -69,5 +73,8 @@ export class SettingsComponent implements OnInit {
     this.settingsService.saveAssemblyLineObj(line);
    //this.settingsService.saveAssemblyLineObjArray(this.AssemblyLineObjArray);
   }
+
+
+  
 
 }

@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
 .fitToContent { 
     /* background: crimson; 
     position: absolute;  */
@@ -7,3 +9,8 @@
     /* left: 0; 
     top: 50%;  */
 } 
+
+
+body {
+  padding: 20px;
+}
