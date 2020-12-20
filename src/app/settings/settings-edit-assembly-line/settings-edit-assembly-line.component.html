@@ -3,9 +3,9 @@
     <span>
         <div class="border border-info fitToContent rounded">
             <ul style="list-style-type:none;">
-                <li><div><button>start</button></div></li>
+                
                 <li><div><div><p>04:00</p></div></div></li>
-                <li *ngFor="let machine of machineArrOfobj" (click)='AddReplaceMachine(machine,1)'><button>{{machine}}</button></li>
+                <li *ngFor="let machine of machineArrOfobj" ><button (click)='AddReplaceMachine(machine,1)' data-toggle="modal" data-target="#exampleModal">{{machine}}</button></li>
                 <li><div><p>Assembly Line no {{AssemblyLineName}}</p></div></li>
                 
             </ul>
@@ -18,14 +18,36 @@
   Add Modal
 </button>
 </div>
+
+<!-- Modal 1 for replace or delete  machine option -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Replace/Delete Machine</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div>
+          <button data-toggle="modal" data-target="#exampleModalCenter" data-dismiss="modal">Replace</button>
+        </div>
+        <div>
+          <button >Delete</button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
  
-             <!-- <select class="mdb-select md-form colorful-select dropdown-primary" searchable="Search here..">
-                <option value="1" disabled selected>Search Machine</option>
-                
-               <option *ngFor="let machine of filterInactiveMachines('no')"  value="machine.MachineName"> {{machine.MachineName}}</option> 
-              </select>  -->
+             
   
-<!-- Modal -->
+<!-- Modal 2 for adding machine-->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
@@ -37,7 +59,7 @@
       </div>
       <div class="modal-body">
         <!-- Dropdown --> 
-        <ng-select [items]="filterdMachineObjArr"  bindLabel="MachineName" bindValue="MachineName" [searchFn]="customSearchFn" clearAllText="Clear"> 
+        <ng-select [(ngModel)]="selectedMachineName" [items]="filterdMachineObjArr"  bindLabel="MachineName" bindValue="MachineName" [searchFn]="customSearchFn" clearAllText="Clear"> 
 
           <ng-template ng-label-tmp let-item="item">
               <span >{{ item.MachineName }}</span>
@@ -49,8 +71,8 @@
         </ng-select>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" (click)="chooseMachinefunction()">Save changes</button>
+        <button type="button" class="btn btn-secondary" (click)="selectedMachineName=''" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="selectedMachineName!==''?chooseMachinefunction():null" data-dismiss="modal">Save changes</button>
       </div>
     </div>
   </div>

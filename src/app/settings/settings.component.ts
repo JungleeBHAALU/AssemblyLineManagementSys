@@ -14,29 +14,9 @@ import * as jquery from 'jquery';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-  MachineArray:machineModel[]=[
-    {MachineName:"machine1",Active:"yes"},{MachineName:"machine2",Active:"yes"},{MachineName:"machine3",Active:"yes"},
-    {MachineName:"machine4",Active:"yes"},{MachineName:"machine5",Active:"yes"},{MachineName:"machine6",Active:"yes"},
-    {MachineName:"machine7",Active:"yes"},{MachineName:"machine8",Active:"yes"},{MachineName:"machine9",Active:"no"},
-    {MachineName:"machine10",Active:"no"},{MachineName:"machine11",Active:"no"},{MachineName:"machine12",Active:"no"},
-    {MachineName:"machine13",Active:"no"},{MachineName:"machine14",Active:"no"},{MachineName:"machine15",Active:"no"}
-  ];
-
+  MachineArray:machineModel[];
   //AssemblyLineArray contains obj of 
-  AssemblyLineObjArray:AssemblyLine[]=[
-    {
-      MachineArr:["machine1","machine2","machine3","machine4"],
-      AssemblyLineName:1,
-      ProductCount:99,
-      Timer:240
-    },
-    {
-      MachineArr:["machine4","machine5","machine6","machine7","machine8"],
-      AssemblyLineName:2,
-      ProductCount:99,
-      Timer:240
-    }
-  ];
+  AssemblyLineObjArray:AssemblyLine[];
   constructor(private router:Router,private settingsService:SettingsServiceService) { }
 
   ngOnInit(): void {
@@ -44,8 +24,10 @@ export class SettingsComponent implements OnInit {
 
   //  this.router.navigate(['/SettingsLayout'],{queryParams: {MachineArray: this.MachineArray,AssemblyLineObjArray:this.AssemblyLineObjArray }});
   this.router.navigate(['/SettingsLayout']);
-  this.settingsService.saveMachineArray(this.MachineArray);
-  this.settingsService.saveAssemblyLineObjArray(this.AssemblyLineObjArray);
+  // this.settingsService.saveMachineArray(this.MachineArray);
+  // this.settingsService.saveAssemblyLineObjArray(this.AssemblyLineObjArray);
+  this.MachineArray =this.settingsService.retrieveMachineArray();
+  this.AssemblyLineObjArray=this.settingsService.retrieveAssemblyLineObjArray();
 }
   createNewAssemblyLine(MachineArray){
     // this.router.navigate(['/SettingsEditAssemblyLine',MachineArray]);
@@ -55,7 +37,7 @@ export class SettingsComponent implements OnInit {
     //   ProductCount:0,
     //   Timer:240
     // } }});
-    console.log("yo");
+    //console.log("yo");
     this.router.navigate(['/SettingsEditAssemblyLine']);
     this.settingsService.saveMachineArray(this.MachineArray);
     this.settingsService.saveAssemblyLineObj({
